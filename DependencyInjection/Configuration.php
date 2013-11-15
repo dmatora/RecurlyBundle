@@ -3,19 +3,22 @@
 namespace Moovly\RecurlyBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
- * This class contains the configuration information for the bundle
+ * This is the class that validates and merges configuration from your app/config files
  *
- * This information is solely responsible for how the different configuration
- * sections are normalized, and merged.
+ * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html#cookbook-bundles-extension-config-class}
  */
-class Configuration
+class Configuration implements ConfigurationInterface
 {
+
     /**
-     * {@inheritDoc}
+     * Generates the configuration tree builder.
+     *
+     * @return \Symfony\Component\Config\Definition\Builder\TreeBuilder The tree builder
      */
-    public function getConfigTree()
+    public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('moovly_recurly');
