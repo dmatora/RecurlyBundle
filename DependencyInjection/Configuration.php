@@ -23,9 +23,15 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('moovly_recurly');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('subdomain')
+                    ->isRequired()
+                ->end()
+                ->scalarNode('api_key')
+                    ->isRequired()
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }
