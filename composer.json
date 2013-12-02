@@ -24,11 +24,5 @@
             "Moovly\\RecurlyBundle": ""
         }
     },
-    "target-dir": "Moovly/RecurlyBundle",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/Moovly/Recurly"
-        }
-    ]
+    "target-dir": "Moovly/RecurlyBundle"
 }
