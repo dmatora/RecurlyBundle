@@ -7,7 +7,6 @@
         <service id="recurlybundle" class="Recurly\Recurly">
             <argument>%moovly_recurly.subdomain%</argument>
             <argument>%moovly_recurly.api_key%</argument>
-            <argument type="service" id="moovly_recurly.serializer" />
         </service>
     </services>
 </container>

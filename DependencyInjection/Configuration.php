@@ -31,9 +31,6 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('api_key')
                     ->isRequired()
                 ->end()
-                ->scalarNode('serializer')
-                    ->defaultValue('jms_serializer')
-                ->end()
             ->end();
 
         return $treeBuilder;

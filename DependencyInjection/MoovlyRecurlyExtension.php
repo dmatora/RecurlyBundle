@@ -17,8 +17,6 @@ class MoovlyRecurlyExtension extends Extension
         $container->setParameter('moovly_recurly.subdomain', $config['subdomain']);
         $container->setParameter('moovly_recurly.api_key', $config['api_key']);
 
-        $container->setAlias('moovly_recurly.serializer', $config['serializer']);
-
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
