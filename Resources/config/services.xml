@@ -4,7 +4,7 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="recurlybundle" class="Recurly\Recurly">
+        <service id="recurly" class="Recurly\Recurly">
             <argument>%moovly_recurly.subdomain%</argument>
             <argument>%moovly_recurly.api_key%</argument>
         </service>
