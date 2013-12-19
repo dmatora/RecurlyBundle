@@ -14,8 +14,20 @@ class MoovlyRecurlyExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('moovly_recurly.subdomain', $config['subdomain']);
-        $container->setParameter('moovly_recurly.api_key', $config['api_key']);
+        $container->setParameter(
+            'moovly_recurly.subdomain',
+            $config['subdomain']
+        );
+        $container->setParameter(
+            'moovly_recurly.api_key',
+            $config['api_key']
+        );
+        $container->setParameter(
+            'moovly_recurly.private_key',
+            array_key_exists('private_key', $config)
+                ? $config['private_key']
+                : null
+        );
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
