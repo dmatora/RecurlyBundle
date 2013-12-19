@@ -14,6 +14,8 @@ Installation
     moovly_recurly:
         subdomain: example
         api_key: abcdefghijk987654321
-        serializer: serializer_service # optional, default is jms_serializer
+        private_key: 123456789kjihgfedcba #optional
 ```
+
+
 
