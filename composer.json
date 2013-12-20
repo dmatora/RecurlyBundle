@@ -17,7 +17,11 @@
     ],
     "require": {
         "symfony/framework-bundle": ">=2.1,<3.0",
+<<<<<<< HEAD
         "moovly/recurly": "dev-master"
+=======
+        "moovly/recurly": "~0.1"
+>>>>>>> develop
     },
     "autoload": {
         "psr-0": {
