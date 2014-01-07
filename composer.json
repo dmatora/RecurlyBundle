@@ -1,7 +1,7 @@
 {
     "name": "moovly/recurly-bundle",
     "type":        "symfony-bundle",
-    "description": "Provides the Recurly API as a service",
+    "description": "Provides the moovly/recurly library as a service",
     "keywords":    ["recurly"],
     "homepage":    "https://github.com/Moovly/RecurlyBundle",
     "license":     "MIT",
