@@ -2,10 +2,10 @@
 
 namespace Moovly\RecurlyBundle\Form\Type;
 
-use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\AbstractType as BaseAbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class StateType extends AbstractType
+class StateType extends BaseAbstractType
 {
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {

@@ -2,8 +2,8 @@
 
 namespace Moovly\RecurlyBundle\Form\Type;
 
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class AccountType extends AbstractType
 {
@@ -19,9 +19,6 @@ class AccountType extends AbstractType
             'text',
             [
                 'label' => 'First Name',
-                'attr'  => [
-                    'placeholder' => 'First Name'
-                ]
             ]
         );
         $builder->add(
@@ -29,9 +26,6 @@ class AccountType extends AbstractType
             'text',
             [
                 'label' => 'Last Name',
-                'attr'  => [
-                    'placeholder' => 'Last Name'
-                ]
             ]
         );
         $builder->add(
@@ -39,12 +33,19 @@ class AccountType extends AbstractType
             'text',
             [
                 'label' => 'Company',
-                'attr'  => [
-                    'placeholder' => 'Company'
-                ]
             ]
         );
         $builder->add('billingInfo', new BillingInfoType());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+                'data_class' => 'Recurly\Model\Account',
+            ));
     }
 
     /**

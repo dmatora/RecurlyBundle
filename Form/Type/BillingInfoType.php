@@ -2,8 +2,8 @@
 
 namespace Moovly\RecurlyBundle\Form\Type;
 
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class BillingInfoType extends AbstractType
 {
@@ -17,9 +17,6 @@ class BillingInfoType extends AbstractType
             'text',
             [
                 'label' => 'First Name',
-                'attr'  => [
-                    'placeholder' => 'First Name'
-                ]
             ]
         );
         $builder->add(
@@ -27,9 +24,6 @@ class BillingInfoType extends AbstractType
             'text',
             [
                 'label' => 'Last Name',
-                'attr'  => [
-                    'placeholder' => 'Last Name'
-                ]
             ]
         );
         $builder->add(
@@ -37,9 +31,6 @@ class BillingInfoType extends AbstractType
             'text',
             [
                 'label' => 'Address 1',
-                'attr'  => [
-                    'placeholder' => 'Address 1'
-                ]
             ]
         );
         $builder->add(
@@ -47,9 +38,6 @@ class BillingInfoType extends AbstractType
             'text',
             [
                 'label' => 'Address 2',
-                'attr'  => [
-                    'placeholder' => 'Address 2'
-                ]
             ]
         );
         $builder->add(
@@ -57,9 +45,6 @@ class BillingInfoType extends AbstractType
             'text',
             [
                 'label' => 'City',
-                'attr'  => [
-                    'placeholder' => 'City'
-                ]
             ]
         );
         $builder->add(
@@ -83,9 +68,6 @@ class BillingInfoType extends AbstractType
             'text',
             [
                 'label' => 'ZIP',
-                'attr'  => [
-                    'placeholder' => 'ZIP'
-                ]
             ]
         );
         $builder->add(
@@ -93,9 +75,6 @@ class BillingInfoType extends AbstractType
             'text',
             [
                 'label' => 'VAT Number',
-                'attr'  => [
-                    'placeholder' => 'VAT Number'
-                ]
             ]
         );
         $builder->add(
@@ -103,9 +82,6 @@ class BillingInfoType extends AbstractType
             'text',
             [
                 'label' => 'Card Number',
-                'attr'  => [
-                    'placeholder' => 'Card Number'
-                ]
             ]
         );
         $builder->add(
@@ -129,11 +105,18 @@ class BillingInfoType extends AbstractType
             'text',
             [
                 'label' => 'Security Code (CVV)',
-                'attr'  => [
-                    'placeholder' => 'Security Code (CVV)'
-                ]
             ]
         );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+                'data_class' => 'Recurly\Model\BillingInfo',
+            ));
     }
 
     /**

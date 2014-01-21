@@ -2,8 +2,8 @@
 
 namespace Moovly\RecurlyBundle\Form\Type;
 
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class NewSubscriptionType extends AbstractType
 {
@@ -18,12 +18,19 @@ class NewSubscriptionType extends AbstractType
             'text',
             [
                 'label' => 'Coupon Code',
-                'attr'  => [
-                    'label' => 'Coupon Code'
-                ]
             ]
         );
         $builder->add('account', new AccountType());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+                'data_class' => 'Recurly\Model\NewSubscription',
+            ));
     }
 
     /**
