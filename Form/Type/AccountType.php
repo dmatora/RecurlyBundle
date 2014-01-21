@@ -13,9 +13,37 @@ class AccountType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('firstName', 'text');
-        $builder->add('lastName', 'text');
-        $builder->add('companyName', 'text');
+        $builder->add('accountCode', 'hidden');
+        $builder->add(
+            'firstName',
+            'text',
+            [
+                'label' => 'First Name',
+                'attr'  => [
+                    'placeholder' => 'First Name'
+                ]
+            ]
+        );
+        $builder->add(
+            'lastName',
+            'text',
+            [
+                'label' => 'Last Name',
+                'attr'  => [
+                    'placeholder' => 'Last Name'
+                ]
+            ]
+        );
+        $builder->add(
+            'companyName',
+            'text',
+            [
+                'label' => 'Company',
+                'attr'  => [
+                    'placeholder' => 'Company'
+                ]
+            ]
+        );
         $builder->add('billingInfo', new BillingInfoType());
     }
 
@@ -24,6 +52,6 @@ class AccountType extends AbstractType
      */
     public function getName()
     {
-        return 'recurlyAccount';
+        return 'account';
     }
 }

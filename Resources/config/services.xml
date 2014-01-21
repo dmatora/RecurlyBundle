@@ -9,5 +9,14 @@
             <argument>%moovly_recurly.api_key%</argument>
             <argument>%moovly_recurly.private_key%</argument>
         </service>
+        <service id="moovly_recurly.form.type.state" class="Moovly\RecurlyBundle\Form\Type\StateType">
+            <tag name="form.type" alias="state"/>
+        </service>
+        <service id="moovly_recurly.form.type.month" class="Moovly\RecurlyBundle\Form\Type\MonthType">
+            <tag name="form.type" alias="month"/>
+        </service>
+        <service id="moovly_recurly.form.type.year" class="Moovly\RecurlyBundle\Form\Type\YearType">
+            <tag name="form.type" alias="year"/>
+        </service>
     </services>
 </container>

@@ -12,67 +12,128 @@ class BillingInfoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('firstName', 'text');
-        $builder->add('lastName', 'text');
-        $builder->add('address1', 'text');
-        $builder->add('address2', 'text');
-        $builder->add('city', 'text');
-        $builder->add('state', 'text');
-        $builder->add('country', 'country', [
-            'empty_value' => 'Country...',
-        ]);
-        $builder->add('zip', 'text');
-        $builder->add('phone', 'text');
-        $builder->add('vat_number', 'text');
-        $builder->add('number', 'text');
-        $builder->add('month', 'choice', [
-            'empty_value' => 'Month...',
-            'choices' => $this->getMonthChoices(),
-        ]);
-        $builder->add('year', 'choice', [
-                'empty_value' => 'Year...',
-                'choices' => $this->getYearChoices(),
-            ]);
-        $builder->add('verificationValue', 'text');
-    }
-
-    /**
-     * Returns an array with all months
-     *
-     * @return array
-     */
-    private function getMonthChoices()
-    {
-        return [
-            '01' => '01 - Jan',
-            '02' => '02 - Feb',
-            '03' => '03 - Mar',
-            '04' => '04 - Apr',
-            '05' => '05 - May',
-            '06' => '06 - Jun',
-            '07' => '07 - Jul',
-            '08' => '08 - Aug',
-            '09' => '09 - Sep',
-            '10' => '10 - Oct',
-            '11' => '11 - Nov',
-            '12' => '12 - Dec',
-        ];
-    }
-
-    /**
-     * Returns an array with year choices
-     *
-     * @return array
-     */
-    private function getYearChoices()
-    {
-        $year = date('Y');
-        $choices = array();
-        for ($count = $year; $count <= $year + 10; $count++) {
-            $choices[$count] = $count;
-        }
-
-        return $choices;
+        $builder->add(
+            'firstName',
+            'text',
+            [
+                'label' => 'First Name',
+                'attr'  => [
+                    'placeholder' => 'First Name'
+                ]
+            ]
+        );
+        $builder->add(
+            'lastName',
+            'text',
+            [
+                'label' => 'Last Name',
+                'attr'  => [
+                    'placeholder' => 'Last Name'
+                ]
+            ]
+        );
+        $builder->add(
+            'address1',
+            'text',
+            [
+                'label' => 'Address 1',
+                'attr'  => [
+                    'placeholder' => 'Address 1'
+                ]
+            ]
+        );
+        $builder->add(
+            'address2',
+            'text',
+            [
+                'label' => 'Address 2',
+                'attr'  => [
+                    'placeholder' => 'Address 2'
+                ]
+            ]
+        );
+        $builder->add(
+            'city',
+            'text',
+            [
+                'label' => 'City',
+                'attr'  => [
+                    'placeholder' => 'City'
+                ]
+            ]
+        );
+        $builder->add(
+            'state',
+            'state',
+            [
+                'empty_value' => 'State&hellip;',
+                'label'       => 'State',
+            ]
+        );
+        $builder->add(
+            'country',
+            'country',
+            [
+                'empty_value' => 'Country&hellip;',
+                'label'       => 'Country'
+            ]
+        );
+        $builder->add(
+            'zip',
+            'text',
+            [
+                'label' => 'ZIP',
+                'attr'  => [
+                    'placeholder' => 'ZIP'
+                ]
+            ]
+        );
+        $builder->add(
+            'vat_number',
+            'text',
+            [
+                'label' => 'VAT Number',
+                'attr'  => [
+                    'placeholder' => 'VAT Number'
+                ]
+            ]
+        );
+        $builder->add(
+            'number',
+            'text',
+            [
+                'label' => 'Card Number',
+                'attr'  => [
+                    'placeholder' => 'Card Number'
+                ]
+            ]
+        );
+        $builder->add(
+            'month',
+            'month',
+            [
+                'empty_value' => 'Month&hellip;',
+                'label'       => 'Expiration Date (Month)'
+            ]
+        );
+        $builder->add(
+            'year',
+            'year',
+            [
+                'empty_value' => 'Year&hellip;',
+                'label'       => 'Expiration Date (Year)'
+            ]
+        );
+        $builder->add(
+            'verificationValue',
+            'text',
+            [
+                'label' => 'Security Code (CVV)',
+                'attr'  => [
+                    'placeholder' => 'Security Code (CVV)'
+                ]
+            ]
+        );
     }
 
     /**
@@ -80,6 +141,6 @@ class BillingInfoType extends AbstractType
      */
     public function getName()
     {
-        return 'recurlyBillingInfo';
+        return 'billingInfo';
     }
 }
