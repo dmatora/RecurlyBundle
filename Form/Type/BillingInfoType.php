@@ -2,6 +2,7 @@
 
 namespace Moovly\RecurlyBundle\Form\Type;
 
+use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
@@ -71,7 +72,7 @@ class BillingInfoType extends AbstractType
             ]
         );
         $builder->add(
-            'vat_number',
+            'vatNumber',
             'text',
             [
                 'label' => 'VAT Number',
