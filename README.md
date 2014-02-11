@@ -3,6 +3,8 @@ RecurlyBundle
 
 A simple Bundle that defines Moovly/Recurly as a Symfony2 service.
 
+Also includes some basic forms that can be used to facilitate subscription management. 
+
 Installation
 ------------
 
