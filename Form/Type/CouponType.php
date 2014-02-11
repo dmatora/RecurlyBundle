@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class NewSubscriptionType extends AbstractType
+class CouponType extends AbstractType
 {
 
     /**
@@ -21,10 +21,6 @@ class NewSubscriptionType extends AbstractType
                 'label' => 'Coupon Code',
             ]
         );
-
-        if ($options['add_account']) {
-            $builder->add('account', new AccountType());
-        }
     }
 
     /**
@@ -32,10 +28,9 @@ class NewSubscriptionType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults([
-            'data_class' => 'Recurly\Model\NewSubscription',
-            'add_account' => true,
-        ]);
+        $resolver->setDefaults(array(
+                'data_class' => 'Recurly\Model\Coupon',
+            ));
     }
 
     /**
@@ -43,6 +38,6 @@ class NewSubscriptionType extends AbstractType
      */
     public function getName()
     {
-        return 'newSubscription';
+        return 'coupon';
     }
 }
