@@ -75,7 +75,7 @@ class BillingInfoType extends AbstractType
             'vatNumber',
             'text',
             [
-                'label' => 'VAT Number',
+                'label' => 'VAT Number (if applicable)',
             ]
         );
         $builder->add(
