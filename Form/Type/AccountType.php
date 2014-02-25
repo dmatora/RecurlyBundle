@@ -14,7 +14,6 @@ class AccountType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('accountCode', 'hidden');
         $builder->add(
             'firstName',
             'text',
