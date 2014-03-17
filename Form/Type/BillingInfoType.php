@@ -50,9 +50,8 @@ class BillingInfoType extends AbstractType
         );
         $builder->add(
             'state',
-            'state',
+            'text',
             [
-                'empty_value' => 'State&hellip;',
                 'label'       => 'State',
             ]
         );
