@@ -18,9 +18,5 @@
         <service id="moovly_recurly.form.type.year" class="Moovly\RecurlyBundle\Form\Type\YearType">
             <tag name="form.type" alias="year"/>
         </service>
-        <service id="moovly_recurly.form.extension.text" class="Moovly\RecurlyBundle\Form\Extension\TextTypeExtension">
-            <tag name="form.type_extension" alias="text" />
-            <argument>%moovly_recurly.use_placeholder%</argument>
-        </service>
     </services>
 </container>
