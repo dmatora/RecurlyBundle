@@ -25,9 +25,6 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->booleanNode('use_placeholder')
-                    ->defaultFalse()
-                ->end()
                 ->scalarNode('subdomain')
                     ->isRequired()
                 ->end()
