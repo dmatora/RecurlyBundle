@@ -15,10 +15,6 @@ class MoovlyRecurlyExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter(
-            'moovly_recurly.use_placeholder',
-            $config['use_placeholder']
-        );
-        $container->setParameter(
             'moovly_recurly.subdomain',
             $config['subdomain']
         );
