@@ -18,7 +18,8 @@ class NewSubscriptionType extends AbstractType
             'couponCode',
             'text',
             [
-                'label' => 'Coupon Code',
+                'required' => false,
+                'label'    => 'Coupon Code',
             ]
         );
 

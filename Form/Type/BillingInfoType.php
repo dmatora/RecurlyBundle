@@ -39,6 +39,7 @@ class BillingInfoType extends AbstractType
             'text',
             [
                 'label' => 'Address 2',
+                'required' => false,
             ]
         );
         $builder->add(
@@ -53,6 +54,7 @@ class BillingInfoType extends AbstractType
             'text',
             [
                 'label'       => 'State',
+                'required' => false,
             ]
         );
         $builder->add(
@@ -75,6 +77,7 @@ class BillingInfoType extends AbstractType
             'text',
             [
                 'label' => 'VAT Number (if applicable)',
+                'required' => false,
             ]
         );
         $builder->add(
