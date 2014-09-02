@@ -14,14 +14,16 @@ class NewSubscriptionType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add(
-            'couponCode',
-            'text',
-            [
-                'required' => false,
-                'label'    => 'Coupon Code',
-            ]
-        );
+        if ($options['add_coupon']) {
+            $builder->add(
+                'couponCode',
+                'text',
+                [
+                    'required' => false,
+                    'label'    => 'Coupon Code',
+                ]
+            );
+        }
 
         if ($options['add_account']) {
             $builder->add('account', new AccountType());
@@ -36,6 +38,7 @@ class NewSubscriptionType extends AbstractType
         $resolver->setDefaults([
             'data_class' => 'Recurly\Model\NewSubscription',
             'add_account' => true,
+            'add_coupon'  => true,
         ]);
     }
 
