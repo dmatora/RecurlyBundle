@@ -15,10 +15,16 @@
             "homepage": "https://github.com/Brammm"
         }
     ],
+		"repositories": {
+			"moovly/recurly": {
+				"type": "vcs",
+				"url": "https://github.com/dmatora/Recurly.git"
+			}
+		},
     "require": {
         "symfony/framework-bundle": "~2.1",
         "symfony/form": "~2.1",
-        "moovly/recurly": "~0.1"
+        "moovly/recurly": "dev-master"
     },
     "autoload": {
         "psr-0": {
